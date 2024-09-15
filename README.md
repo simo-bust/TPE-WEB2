@@ -1,8 +1,8 @@
 # Libreria
 
 ### Integrantes: 
-+ Simón Bustamante
-+ Valentino Sabbattini
++ Simón Bustamante (46.353.537)
++ Valentino Sabbattini (45.542.165)
 
 ### Descripcion
 Elegimos realizar una base de datos de una libreria. Esta va a constar inicialmente de dos tablas: 
