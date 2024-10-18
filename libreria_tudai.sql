@@ -3,15 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
-<<<<<<< HEAD
+
 -- Tiempo de generación: 17-10-2024 a las 00:11:01
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
-=======
+
 -- Tiempo de generación: 15-09-2024 a las 21:40:26
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
->>>>>>> 496c3dde16bbd8b3c8a736fb6b3df50f4d189f20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -61,10 +60,9 @@ CREATE TABLE `libro` (
   `autor` varchar(50) NOT NULL,
   `genero` varchar(50) NOT NULL,
   `precio` int(11) NOT NULL,
-<<<<<<< HEAD
+
   `descripcion` text NOT NULL,
-=======
->>>>>>> 496c3dde16bbd8b3c8a736fb6b3df50f4d189f20
+
   `ID_Editorial` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -72,7 +70,7 @@ CREATE TABLE `libro` (
 -- Volcado de datos para la tabla `libro`
 --
 
-<<<<<<< HEAD
+
 INSERT INTO `libro` (`ID_Libro`, `titulo`, `autor`, `genero`, `precio`, `descripcion`, `ID_Editorial`) VALUES
 (1, 'Juego de tronos', 'George R.R. Martin', 'Fantasia', 30000, 'En el legendario mundo de los Siete Reinos, donde el verano puede durar décadas y el invierno toda una vida, y donde rastros de una magia inmemorial surgen de los rincones más sombríos, la tierra del norte, Invernalia, está resguardada por un colosal muro de hielo que detiene a fuerzas oscuras y sobrenaturales. En este majestuoso escenario, lord Stark y su familia se encuentran en el centro de un conflicto que desatará todas las pasiones: la traición y la lealtad, la compasión y la sed de venganza, el amor y el poder, la lujuria y el incesto, todo ello para ganar la más mortal de las batallas: el trono de hierro, una poderosa trampa que atrapará a los personajes… y al lector.', 1),
 (2, 'Fullmetal alchemist', ' Hiromu Arakawa', 'Aventura', 6000, 'Los hermanos Edward y Alphonse Elric viven en un mundo donde la magia y la alquimia existen y se pueden practicar. Después de la muerte de su madre, juntos tratarán de resucitarla a través de la alquimia. Pero algo sale mal y Edward pierde un brazo y una pierna, y el espíritu de Alphonse acaba relegado en una vieja armadura.\r\n\r\nPara poder recuperar sus cuerpos deciden apuntarse al ejército de Amestris, en la división de alquimistas, para así poder seguir investigando sobre “la piedra filosofal” que puede devolverlos a la normalidad. Lo que no esperaban descubrir es que detrás de la piedra filosofal hay toda una conspiración escondida para destruir el mundo entero tal y como lo conocemos…', 2),
@@ -84,7 +82,7 @@ INSERT INTO `libro` (`ID_Libro`, `titulo`, `autor`, `genero`, `precio`, `descrip
 (8, 'Dragon ball', 'Akira Toriyama', 'Aventura', 6000, 'Se centra en un niño alienígena llamado Goku que es enviado a la Tierra. Tiene características especiales como una cola de mono y potencial para las artes marciales. Conoce a Bulma y le acompaña a buscar las bolas de Dragón, un artefacto mágico capaz de conceder deseos.', 2),
 (9, 'DUNE: Parte 1', 'Frank Herbert', 'Postapocalíptico', 40000, '\"Dune\", el periplo de un héroe mítico y con una enorme carga emocional, cuenta la historia de Paul Atreides. Se trata de un joven brillante y de gran talento con un destino grandioso que no comprende todavía y que deberá viajar al planeta más peligroso del universo para asegurar el futuro de su familia y de su pueblo. Mientras las fuerzas del mal se enfrentan por uno de los recursos más excepcionales del planeta que tiene el poder de desbloquear todo el potencial de la humanidad, solo los que logren dominar sus miedos podrán sobrevivir.', 3),
 (11, 'Naruto', 'Masashi Kishimoto', 'Aventura', 6000, 'Naruto es una serie de manga escrita e ilustrada por Masashi Kishimoto. La obra narra la historia de un ninja adolescente llamado Naruto Uzumaki, quien aspira a convertirse en Hokage, líder de su aldea, con el propósito de ser reconocido como alguien importante dentro de la aldea y entre sus compañeros.', 4);
-=======
+
 INSERT INTO `libro` (`ID_Libro`, `titulo`, `autor`, `genero`, `precio`, `ID_Editorial`) VALUES
 (1, 'Juego de tronos', 'George R.R. Martin', 'Fantasia', 30000, 1),
 (2, 'Fullmetal alchemist', ' Hiromu Arakawa', 'Aventura', 6000, 2),
@@ -96,7 +94,7 @@ INSERT INTO `libro` (`ID_Libro`, `titulo`, `autor`, `genero`, `precio`, `ID_Edit
 (8, 'Dragon ball', 'Akira Toriyama', 'Aventura', 6000, 2),
 (9, 'DUNE: Parte 1', 'Frank Herbert', 'Postapocalíptico', 40000, 3),
 (11, 'Naruto', 'Masashi Kishimoto', 'Aventura', 6000, 4);
->>>>>>> 496c3dde16bbd8b3c8a736fb6b3df50f4d189f20
+
 
 --
 -- Índices para tablas volcadas
