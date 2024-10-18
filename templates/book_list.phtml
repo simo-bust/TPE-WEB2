@@ -1,0 +1,24 @@
+<?php require_once './templates/layout/header.php'?>
+
+<div class="list-container">
+    <table>
+        <tr>
+            <td>Titulo</td>
+            <td>Autor</td>
+            <td>Genero</td>
+            <td>Precio</td>
+            <td>Detalle</td>
+        </tr>
+        <?php foreach($books as $book): ?>
+            <tr>
+                <td> <?= htmlspecialchars($book->titulo) ?> </td>
+                <td> <?= htmlspecialchars($book->autor) ?> </td>
+                <td> <?= htmlspecialchars($book->genero) ?> </td>
+                <td> <?= htmlspecialchars($book->precio) ?> </td>
+                <td><a href="detail/<?= htmlspecialchars($book->ID_Libro) ?>">ver mas</a> </td>
+            </tr>
+        <?php endforeach ?>
+        </table>
+</div>
+
+<?php require_once './templates/layout/footer.php'?>

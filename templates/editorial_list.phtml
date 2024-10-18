@@ -1,0 +1,21 @@
+<?php require_once './templates/layout/header.php'?>
+
+<div class="list-container">
+    <table>
+        <tr>
+            <td>Nombre</td>
+            <td>País</td>
+            <td>Libros</td>
+        </tr>
+        <?php foreach($editorials as $editorial): ?>  <!-- Usa $editorials aquí -->
+            <tr>
+                <td> <?= htmlspecialchars($editorial->nombre) ?> </td>
+                <td> <?= htmlspecialchars($editorial->pais) ?> </td>
+    
+                <td><a href="booksByEditorial/<?= htmlspecialchars($editorial->ID_Editorial) ?>">ver libros</a> </td>  <!-- Enlace a libros por editorial -->
+            </tr>
+        <?php endforeach ?>
+    </table>
+</div>
+
+<?php require_once './templates/layout/footer.php'?>

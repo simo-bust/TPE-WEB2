@@ -1,0 +1,12 @@
+<?php require_once './templates/layout/header.php'; ?>
+
+<div class="book-details">
+    <h1><?= htmlspecialchars($book->titulo) ?></h1>
+    <img src="../image/<?= htmlspecialchars($book->ID_Libro) ?>.png" alt="imagen de <?= htmlspecialchars($book->titulo) ?>">
+    <p><strong>Autor:</strong> <?= htmlspecialchars($book->autor) ?></p>
+    <p><strong>Género:</strong> <?= htmlspecialchars($book->genero) ?></p>
+    <p><strong>Precio:</strong> <?= htmlspecialchars($book->precio) ?></p>
+    <p><strong>Descripción:</strong> <?= htmlspecialchars($book->descripcion) ?></p>
+</div>
+
+<?php require_once './templates/layout/footer.php'; ?>
