@@ -74,7 +74,7 @@ class BookController {
 
     public function BookDelete($id) {
         $this->bookModel->deleteBook($id); // Eliminar libro de la base de datos
-        // No es necesario hacer nada aquí, ya que listBooks se encargará de mostrar la lista actualizada.
+        // No es necesario hacer nada aca, ya que listBooks se encargará de mostrar la lista actualizada.
     }
 
     public function showEditBookForm($id) {
