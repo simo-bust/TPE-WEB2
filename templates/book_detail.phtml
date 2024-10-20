@@ -7,6 +7,8 @@
     <p><strong>Género:</strong> <?= htmlspecialchars($book->genero) ?></p>
     <p><strong>Precio:</strong> <?= htmlspecialchars($book->precio) ?></p>
     <p><strong>Descripción:</strong> <?= htmlspecialchars($book->descripcion) ?></p>
+    <p><strong>Editorial:</strong> <?= isset($editorial->nombre) ? htmlspecialchars($editorial->nombre) : 'No disponible' ?></p>
 </div>
 
 <?php require_once './templates/layout/footer.php'; ?>
+

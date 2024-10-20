@@ -13,7 +13,7 @@ td {
 
 
 .header {
-    background-color: #292929;
+    background-color: #9c3a3a;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,7 +31,7 @@ td {
 }
 
 .header .logo img {
-    width: 120px;
+    width: 200px ;
     height: auto;
     border-radius: 50px;
     transition: all 0.3s;
@@ -45,8 +45,10 @@ td {
     display: flex;
     align-items: center;
     width: 100%;
-    justify-content: flex-end; /* Alinea los elementos del menú a la derecha */
+    justify-content: flex-end;
+    padding-right: 100px; /* Añade relleno a la derecha */
 }
+
 
 .header .menu {
     display: flex; /* Mostrar el menú en pantallas grandes */
@@ -69,7 +71,7 @@ td {
 }
 
 .header .menu a:hover {
-    color: rgb(183, 76, 244);
+    color: rgb(26, 156, 255);
 }
 
 .footer {

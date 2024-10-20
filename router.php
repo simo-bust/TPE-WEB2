@@ -9,7 +9,7 @@ $action = 'home'; // Acción por defecto si no se envía ninguna
 
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
-} else{
+} else {
     $action = 'home';
 }
 
@@ -25,16 +25,38 @@ switch ($params[0]) {
         $bookController->listBooks();
         break;
     case 'detail':
-        $bookController->bookDetail($params[1]);
+        if (isset($params[1])) {
+            $bookController->bookDetail($params[1]);
+        } else {
+            echo "ID de libro no proporcionado";
+        }
         break;
     case 'editorial':
-        $editorialController->listEditorials();  // Asegúrate de llamar al método correcto
+        $editorialController->listEditorials();
         break;
     case 'booksByEditorial':
-        $editorialController->booksByEditorial($params[1]);  // Mostrar libros por editorial
+        if (isset($params[1])) {
+            $editorialController->booksByEditorial($params[1]);
+        } else {
+            echo "ID de editorial no proporcionado";
+        }
+        break;
+    case "addBook":
+        $bookController->addBook();
+        break;
+    case "editBook":
+        if (isset($params[1])) {
+            $bookController->showEditBookForm($params[1]); // Mostrar formulario de edición
+        } else {
+            echo "ID de libro no proporcionado para edición";
+        }
+        break;
+    case "updateBook":
+        $bookController->updateBook(); // Actualizar libro
         break;
     default:
         echo "404 Page Not Found";
         break;
 }
+
 

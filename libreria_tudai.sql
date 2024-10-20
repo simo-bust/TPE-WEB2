@@ -83,18 +83,6 @@ INSERT INTO `libro` (`ID_Libro`, `titulo`, `autor`, `genero`, `precio`, `descrip
 (9, 'DUNE: Parte 1', 'Frank Herbert', 'Postapocalíptico', 40000, '\"Dune\", el periplo de un héroe mítico y con una enorme carga emocional, cuenta la historia de Paul Atreides. Se trata de un joven brillante y de gran talento con un destino grandioso que no comprende todavía y que deberá viajar al planeta más peligroso del universo para asegurar el futuro de su familia y de su pueblo. Mientras las fuerzas del mal se enfrentan por uno de los recursos más excepcionales del planeta que tiene el poder de desbloquear todo el potencial de la humanidad, solo los que logren dominar sus miedos podrán sobrevivir.', 3),
 (11, 'Naruto', 'Masashi Kishimoto', 'Aventura', 6000, 'Naruto es una serie de manga escrita e ilustrada por Masashi Kishimoto. La obra narra la historia de un ninja adolescente llamado Naruto Uzumaki, quien aspira a convertirse en Hokage, líder de su aldea, con el propósito de ser reconocido como alguien importante dentro de la aldea y entre sus compañeros.', 4);
 
-INSERT INTO `libro` (`ID_Libro`, `titulo`, `autor`, `genero`, `precio`, `ID_Editorial`) VALUES
-(1, 'Juego de tronos', 'George R.R. Martin', 'Fantasia', 30000, 1),
-(2, 'Fullmetal alchemist', ' Hiromu Arakawa', 'Aventura', 6000, 2),
-(3, 'Elantris', 'Brandon Sanderson', 'Fantasia', 40000, 3),
-(4, 'Spider-man', 'Stan Lee', 'Superheroe', 15000, 4),
-(5, 'La comunidad del anillo', 'J. R. R. Tolkien', 'Fantasia', 30000, 1),
-(6, 'El rey arturo', 'Chretien de Troyes ', 'Aventura', 4000, 1),
-(7, 'Yo soy el Diego de la gente', 'Diego Armando Maradona', 'Autobiografico', 10000, 1),
-(8, 'Dragon ball', 'Akira Toriyama', 'Aventura', 6000, 2),
-(9, 'DUNE: Parte 1', 'Frank Herbert', 'Postapocalíptico', 40000, 3),
-(11, 'Naruto', 'Masashi Kishimoto', 'Aventura', 6000, 4);
-
 
 --
 -- Índices para tablas volcadas

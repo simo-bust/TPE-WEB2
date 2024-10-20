@@ -6,7 +6,7 @@ class View {
         require_once  './templates/book_list.phtml';
     }
 
-    public function showBookDetail($book) {
+    public function showBookDetail($book, $editorial) {
         require_once './templates/book_detail.phtml';
     }
 
@@ -17,6 +17,15 @@ class View {
     public function showBooksByEditorial($books) {
         require_once  './templates/books_by_editorial.phtml';
     }
+
+    public function showAddBookForm($editorials) {
+        require './templates/add_book.phtml'; // Asegúrate de que este archivo esté bien incluido
+    }
+
+    public function showEditBookForm ($book, $editorials){
+        require './templates/edit_book.phtml';
+    }
+
 }
 
 

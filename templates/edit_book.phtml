@@ -1,0 +1,41 @@
+<?php require_once './templates/layout/header.php' ?>
+
+<div class="edit-container">
+    <h2>Editar Libro</h2>
+    <form action="<?= BASE_URL ?>updateBook" method="POST">
+        <input type="hidden" name="id" value="<?= htmlspecialchars($book->ID_Libro) ?>">
+
+        <label for="titulo">Título:</label>
+        <input type="text" name="titulo" value="<?= htmlspecialchars($book->titulo) ?>" required>
+        <br>
+
+        <label for="autor">Autor:</label>
+        <input type="text" name="autor" value="<?= htmlspecialchars($book->autor) ?>" required>
+        <br>
+
+        <label for="genero">Género:</label>
+        <input type="text" name="genero" value="<?= htmlspecialchars($book->genero) ?>" required>
+        <br>
+
+        <label for="precio">Precio:</label>
+        <input type="number" name="precio" value="<?= htmlspecialchars($book->precio) ?>" required>
+        <br>
+
+        <label for="idEditorial">Editorial:</label>
+        <select name="idEditorial" required>
+            <?php foreach ($editorials as $editorial): ?>
+                <option value="<?= htmlspecialchars($editorial->ID_Editorial) ?>" 
+                    <?= ($editorial->ID_Editorial == $book->ID_Editorial) ? 'selected' : '' ?>>
+                    <?= htmlspecialchars($editorial->nombre) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <br>
+
+        <button type="submit">Actualizar</button>
+    </form>
+</div>
+
+<?php require_once './templates/layout/footer.php' ?>
+
+

@@ -1,4 +1,4 @@
-<?php require_once './templates/layout/header.php'?>
+<?php require_once './templates/layout/header.php' ?>
 
 <div class="list-container">
     <table>
@@ -8,17 +8,33 @@
             <td>Genero</td>
             <td>Precio</td>
             <td>Detalle</td>
+            <td>Acciones</td> <!-- Columna para acciones -->
         </tr>
-        <?php foreach($books as $book): ?>
+        <?php foreach ($books as $book): ?>
             <tr>
-                <td> <?= htmlspecialchars($book->titulo) ?> </td>
-                <td> <?= htmlspecialchars($book->autor) ?> </td>
-                <td> <?= htmlspecialchars($book->genero) ?> </td>
-                <td> <?= htmlspecialchars($book->precio) ?> </td>
-                <td><a href="detail/<?= htmlspecialchars($book->ID_Libro) ?>">ver mas</a> </td>
+                <td><?= htmlspecialchars($book->titulo) ?></td>
+                <td><?= htmlspecialchars($book->autor) ?></td>
+                <td><?= htmlspecialchars($book->genero) ?></td>
+                <td><?= htmlspecialchars($book->precio) ?></td>
+                <td><a href="detail/<?= htmlspecialchars($book->ID_Libro) ?>">ver más</a></td>
+                <td>
+                    <form action="<?= BASE_URL ?>editBook/<?= htmlspecialchars($book->ID_Libro) ?>" method="GET" style="display:inline;">
+                        <button type="submit">Editar</button>
+                    </form>
+                    <form action="<?= BASE_URL ?>deleteBook/<?= htmlspecialchars($book->ID_Libro) ?>" method="POST" style="display:inline;">
+                        <button type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este libro?');">Eliminar</button>
+                    </form>
+                </td>
             </tr>
-        <?php endforeach ?>
-        </table>
+        <?php endforeach; ?>
+    </table>
+
+    <!-- Botón para agregar un nuevo libro -->
+    <div style="margin-top: 20px;">
+        <a href="<?= BASE_URL ?>addBook" class="btn btn-primary">Agregar Nuevo Libro</a>
+    </div>
 </div>
 
-<?php require_once './templates/layout/footer.php'?>
+<?php require_once './templates/layout/footer.php' ?>
+
+
