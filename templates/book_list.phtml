@@ -1,6 +1,6 @@
 <?php require_once './templates/layout/header.php' ?>
 
-<div class="list-container">
+<div>
     <table>
         <tr>
             <td>Titulo</td>
@@ -8,7 +8,7 @@
             <td>Genero</td>
             <td>Precio</td>
             <td>Detalle</td>
-            <td>Acciones</td> <!-- Columna para acciones -->
+            <td>Acciones</td>
         </tr>
         <?php foreach ($books as $book): ?>
             <tr>
@@ -18,20 +18,21 @@
                 <td><?= htmlspecialchars($book->precio) ?></td>
                 <td><a href="detail/<?= htmlspecialchars($book->ID_Libro) ?>">ver más</a></td>
                 <td>
-                    <form action="<?= BASE_URL ?>editBook/<?= htmlspecialchars($book->ID_Libro) ?>" method="GET" style="display:inline;">
+                <?php if (isset($_SESSION['ID_USER'])): ?>
+                    <form action="<?= BASE_URL ?>editBook/<?= htmlspecialchars($book->ID_Libro) ?>" method="GET">
                         <button type="submit">Editar</button>
                     </form>
-                    <form action="<?= BASE_URL ?>deleteBook/<?= htmlspecialchars($book->ID_Libro) ?>" method="POST" style="display:inline;">
+                    <form action="<?= BASE_URL ?>deleteBook" method="POST">
+                        <input type="hidden" name="book_id" value="<?= htmlspecialchars($book->ID_Libro) ?>">
                         <button type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este libro?');">Eliminar</button>
                     </form>
-                </td>
+                <?php endif; ?>
+            </td>
             </tr>
         <?php endforeach; ?>
     </table>
-
-    <!-- Botón para agregar un nuevo libro -->
-    <div style="margin-top: 20px;">
-        <a href="<?= BASE_URL ?>addBook" class="btn btn-primary">Agregar Nuevo Libro</a>
+    <div>
+        <a href="<?= BASE_URL ?>addBook">Agregar Nuevo Libro</a>
     </div>
 </div>
 

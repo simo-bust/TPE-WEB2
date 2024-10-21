@@ -1,4 +1,6 @@
 <?php
+require_once './libs/config.php';
+
 class EditorialModel {
     private $db;
 

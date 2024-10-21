@@ -56,7 +56,7 @@ class BookModel {
         $query = $this->db->prepare('SELECT * FROM libro WHERE ID_Libro = ?');
         $query->execute([$id]);
         
-        return $query->fetch(PDO::FETCH_OBJ); // Asegúrate de que esto devuelve un objeto, no un string o null
+        return $query->fetch(PDO::FETCH_OBJ); 
     }
     
 

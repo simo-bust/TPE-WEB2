@@ -8,12 +8,12 @@
             <td>País</td>
             <td>Catalogo</td>
         </tr>
-        <?php foreach($editorials as $editorial): ?>  <!-- Usa $editorials aquí -->
+        <?php foreach($editorials as $editorial): ?> 
             <tr>
                 <td> <?= htmlspecialchars($editorial->nombre) ?> </td>
                 <td> <?= htmlspecialchars($editorial->pais) ?> </td>
     
-                <td><a href="booksByEditorial/<?= htmlspecialchars($editorial->ID_Editorial) ?>">ver libros</a> </td>  <!-- Enlace a libros por editorial -->
+                <td><a href="booksByEditorial/<?= htmlspecialchars($editorial->ID_Editorial) ?>">ver libros</a> </td> 
             </tr>
         <?php endforeach ?>
     </table>

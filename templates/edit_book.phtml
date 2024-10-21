@@ -24,7 +24,7 @@
         <label for="idEditorial">Editorial:</label>
         <select name="idEditorial" required>
             <?php foreach ($editorials as $editorial): ?>
-                <option value="<?= htmlspecialchars($editorial->ID_Editorial) ?>" 
+                <option value="<?= htmlspecialchars($editorial->ID_Editorial) ?>"
                     <?= ($editorial->ID_Editorial == $book->ID_Editorial) ? 'selected' : '' ?>>
                     <?= htmlspecialchars($editorial->nombre) ?>
                 </option>

@@ -1,29 +1,26 @@
 <?php
 require_once './app/models/book_model.php';
-require_once './app/models/editorial_model.php'; // Ahora incluimos el modelo de Editorial
+require_once './app/models/editorial_model.php';
 require_once './app/views/view.php';
 
 class BookController {
     private $bookModel;
-    private $editorialModel; // Agregamos una propiedad para el modelo de Editorial
+    private $editorialModel; 
     private $view;
 
     public function __construct() {
+        session_start(); 
         $this->bookModel = new BookModel();
-        $this->editorialModel = new EditorialModel(); // Inicializamos el modelo de Editorial
+        $this->editorialModel = new EditorialModel();
         $this->view = new View();
     }
-
-    // Listar todos los libros
-    public function listBooks() {
-        // Verifica si se ha enviado una solicitud POST para eliminar un libro
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_id'])) {
-            $this->BookDelete($_POST['book_id']); // Elimina el libro
-        }
     
+     // Listar libros
+    public function listBooks() {
         // Obtener libros desde el modelo
-        $books = $this->bookModel->getBooks(); 
-        // Pasar los libros a la vista para que los muestre
+        $books = $this->bookModel->getBooks();
+        
+        // Pasar los libros y el estado de sesión a la vista
         $this->view->showListBooks($books);
     }
 
@@ -33,7 +30,6 @@ class BookController {
             // Obtener la editorial usando el ID de la editorial del libro
             $editorial = $this->editorialModel->getEditorialById($book->ID_Editorial);
             
-            // Pasar tanto el libro como la editorial a la vista
             $this->view->showBookDetail($book, $editorial);
         } else {
             echo "Libro no encontrado";
@@ -58,7 +54,7 @@ class BookController {
             $genero = $_POST['genero'];
             $precio = $_POST['precio'];
             $idEditorial = $_POST['idEditorial'];
-            $descripcion = $_POST['descripcion']; // Asegúrate de capturar la descripción
+            $descripcion = $_POST['descripcion'];
 
             // Agregar libro a la base de datos
             $this->bookModel->insertBook($titulo, $autor, $genero, $precio, $idEditorial, $descripcion);
@@ -67,20 +63,26 @@ class BookController {
             header('Location: ' . BASE_URL . 'home');
             exit();
         } else {
-            // Si no se envía POST, simplemente mostrar el formulario
             $this->showAddBookForm();
         }
     }
 
-    public function BookDelete($id) {
-        $this->bookModel->deleteBook($id); // Eliminar libro de la base de datos
-        // No es necesario hacer nada aca, ya que listBooks se encargará de mostrar la lista actualizada.
+    public function deleteBook() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_id'])) {
+            $id = $_POST['book_id'];
+            $this->bookModel->deleteBook($id); // Eliminar libro de la base de datos
+            // Redirigir a la lista de libros después de eliminar
+            header('Location: ' . BASE_URL . 'home');
+            exit();
+        } else {
+            echo "Método no permitido";
+        }
     }
 
     public function showEditBookForm($id) {
         $book = $this->bookModel->getBookById($id); // Obtener el libro por ID
         $editorials = $this->editorialModel->getEditoriales(); // Obtener todas las editoriales
-        $this->view->showEditBookForm($book, $editorials); // Mostrar vista de formulario de edición
+        $this->view->showEditBookForm($book, $editorials);
     }
 
     // Actualizar un libro

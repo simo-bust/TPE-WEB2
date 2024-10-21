@@ -19,11 +19,15 @@ class View {
     }
 
     public function showAddBookForm($editorials) {
-        require './templates/add_book.phtml'; // Asegúrate de que este archivo esté bien incluido
+        require './templates/add_book.phtml'; 
     }
 
     public function showEditBookForm ($book, $editorials){
         require './templates/edit_book.phtml';
+    }
+
+    public function showLogin($error=NULL){
+        require 'templates/form_login.phtml'; 
     }
 
 }

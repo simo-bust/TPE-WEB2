@@ -1,7 +1,7 @@
 <?php
-require_once './app/models/book_model.php';  // Modelo de libros
-require_once './app/models/editorial_model.php';  // Modelo de editoriales
-require_once './app/views/view.php';  // Clase de vistas
+require_once './app/models/book_model.php';  
+require_once './app/models/editorial_model.php';  
+require_once './app/views/view.php';  
 
 class EditorialController {
     private $bookModel;
