@@ -14,4 +14,5 @@ Para desplegar el sitio de manera debida, se necesita tener el programa XAMPP in
 Para ingresar a la pagina web se debe acceder al localhost desde el navegador(colocar la url: localhost/tpe2).
 La base de datos se debe importar en phpmyadmin solo creando una base de datos vacia solo con el nombre correspondiente (en este caso nuestra base se llama: libreria_tudai.sql).
 
-![image](Diagrama de tablas.png)
+![image](![image](https://github.com/user-attachments/assets/3d17949b-fc04-48d3-9197-dd2208504745)
+)
