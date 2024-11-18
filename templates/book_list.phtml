@@ -1,0 +1,41 @@
+<?php require_once './templates/layout/header.php' ?>
+
+<div>
+    <table>
+        <tr>
+            <td>Titulo</td>
+            <td>Autor</td>
+            <td>Genero</td>
+            <td>Precio</td>
+            <td>Detalle</td>
+            <td>Acciones</td>
+        </tr>
+        <?php foreach ($books as $book): ?>
+            <tr>
+                <td><?= htmlspecialchars($book->titulo) ?></td>
+                <td><?= htmlspecialchars($book->autor) ?></td>
+                <td><?= htmlspecialchars($book->genero) ?></td>
+                <td><?= htmlspecialchars($book->precio) ?></td>
+                <td><a href="detail/<?= htmlspecialchars($book->ID_Libro) ?>">ver más</a></td>
+                <td>
+                <?php if (isset($_SESSION['ID_USER'])): ?>
+                    <form action="<?= BASE_URL ?>editBook/<?= htmlspecialchars($book->ID_Libro) ?>" method="GET">
+                        <button type="submit">Editar</button>
+                    </form>
+                    <form action="<?= BASE_URL ?>deleteBook" method="POST">
+                        <input type="hidden" name="book_id" value="<?= htmlspecialchars($book->ID_Libro) ?>">
+                        <button type="submit" onclick="return confirm('¿Estás seguro de que quieres eliminar este libro?');">Eliminar</button>
+                    </form>
+                <?php endif; ?>
+            </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <div>
+        <a href="<?= BASE_URL ?>addBook">Agregar Nuevo Libro</a>
+    </div>
+</div>
+
+<?php require_once './templates/layout/footer.php' ?>
+
+

@@ -1,0 +1,13 @@
+<?php require_once './templates/layout/header.php'?>
+
+<h1>Libros de la editorial</h1>
+
+<div class="list-container">
+    <ul>
+        <?php foreach($books as $book): ?>
+            <li><?= htmlspecialchars($book->titulo) ?></li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
+<?php require_once './templates/layout/footer.php'?>

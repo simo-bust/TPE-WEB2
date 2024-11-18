@@ -1,0 +1,18 @@
+<?php require 'templates/layout/header.php'?>
+
+<h1>Iniciar Sesion</h1>
+<form method='post' action='auth'>
+    <div>
+        <label for='name'>Name</label>
+        <input id='name' name='name' required>
+    </div>
+    <div>
+        <label for='password'>Password</label>
+        <input id='password' name='password' required>
+    </div>
+    <button type='submit'>Login</button>
+</form>
+
+<div><?php echo $error ?></div>
+
+    <?php require 'templates/layout/footer.php'  ?>
