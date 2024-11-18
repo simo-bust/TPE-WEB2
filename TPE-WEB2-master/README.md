@@ -1,5 +1,8 @@
 # Libreria
 
+## REENTREGA:
+# Se realizaron las consignas que faltaban y se corrijieron errores. 
+
 ### Integrantes: 
 + Simón Bustamante (46.353.537)
 + Valentino Sabbattini (45.542.165)
