@@ -1,0 +1,20 @@
+<?php require_once './templates/layout/header.php' ?>
+
+<div class="edit-container">
+    <h2>Actualizar Editorial</h2>
+    <form action="<?= BASE_URL ?>updateEditorial" method="POST">
+        <input type="hidden" name="id" value="<?= htmlspecialchars($editorial->ID_Editorial) ?>">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="<?= htmlspecialchars($editorial->nombre) ?>" required>
+        <br>
+
+        <label for="pais">pais:</label>
+        <input type="text" name="pais" value="<?= htmlspecialchars($editorial->pais) ?>" required>
+        <br>
+
+        <button type="submit">Actualizar</button>
+    </form>
+</div>
+
+<?php require_once './templates/layout/footer.php' ?>

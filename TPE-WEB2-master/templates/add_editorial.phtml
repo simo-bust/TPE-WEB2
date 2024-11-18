@@ -1,0 +1,17 @@
+<?php require_once './templates/layout/header.php'; ?>
+
+<section >
+    <form action="<?= BASE_URL ?>addEditorial" method="POST">
+        <h3>Añadir Nueva editorial</h3>
+
+        <label for="nombre">Nombre </label>
+        <input type="text" name="nombre" id="nombre" required>
+
+        <label for="pais">Pais</label>
+        <input type="text" name="pais" id="pais" required>
+
+        <button type="submit">Aceptar</button>
+    </form>
+</section>
+
+<?php require_once './templates/layout/footer.php'; ?>
